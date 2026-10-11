@@ -29,7 +29,7 @@ jobs:
       - name: Run Codex issue triager
         uses: openai/codex-action@86365089eb2b84e0a8fb0717b304f8bdcb13b20e # v1
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}  # validation-only: PAT so label events trigger downstream workflows (upstream uses github.token)
         with:
           allow-users: '*'
           allow-bot-users: 'github-actions[bot]'
