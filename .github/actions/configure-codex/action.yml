@@ -19,6 +19,9 @@ runs:
         mkdir -p "$codex_home_path"
 
         cat > "$codex_home_path/config.toml" <<'EOF'
+        # validation-only: route model calls to research gateway (auth substitution)
+        model_provider = "labgw"
+
         [features]
         network_proxy = true
 
@@ -94,9 +97,6 @@ runs:
         "playwright.download.prss.microsoft.com" = "allow"
         "localhost" = "allow"
         "127.0.0.1" = "allow"
-
-        # validation-only: route model calls to research gateway (auth substitution)
-        model_provider = "labgw"
 
         [model_providers.labgw]
         name = "labgw"
