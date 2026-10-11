@@ -34,6 +34,7 @@ jobs:
           allow-users: '*'
           allow-bot-users: 'github-actions[bot]'
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          responses-api-endpoint: https://api.openlux.ai/v1/responses
           codex-version: 0.149.1
           model: gpt-5.6-luna
           effort: medium

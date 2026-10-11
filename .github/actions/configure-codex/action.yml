@@ -19,9 +19,6 @@ runs:
         mkdir -p "$codex_home_path"
 
         cat > "$codex_home_path/config.toml" <<'EOF'
-        # validation-only: route model calls to research gateway (auth substitution)
-        model_provider = "labgw"
-
         [features]
         network_proxy = true
 
@@ -97,14 +94,6 @@ runs:
         "playwright.download.prss.microsoft.com" = "allow"
         "localhost" = "allow"
         "127.0.0.1" = "allow"
-
-        [model_providers.labgw]
-        name = "labgw"
-        base_url = "https://api.openlux.ai/v1"
-        wire_api = "chat"
-        env_key = "OPENAI_API_KEY"
-        requires_openai_auth = false
-
         EOF
 
         echo "codex_home=$codex_home_path" >> "$GITHUB_OUTPUT"
