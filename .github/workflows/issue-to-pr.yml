@@ -39,7 +39,7 @@ jobs:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
           responses-api-endpoint: https://api.openlux.ai/v1/responses
           codex-version: 0.149.1
-          model: gpt-5.6-sol
+          model: gpt-5.6-luna  # validation-only: sol suspected of gateway-side long-session drops
           effort: high
           safety-strategy: drop-sudo
           codex-home: ${{ steps.codex_permissions.outputs.codex_home }}
